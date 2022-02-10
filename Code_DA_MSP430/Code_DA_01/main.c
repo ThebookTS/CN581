@@ -20,24 +20,22 @@ int idx = 0, idxx=0;
 float   counter,volts,amps, microamps ;
 
 // chuong trinh chinh
-void main()
-{
-    // khoi dong chip
-    WDTCTL =  WDTPW + WDTHOLD; // TAT WATHCHDOG
-    P2DIR = 0xff;              // KHAI BAO P2.0 -> P2.7
-    P2SEL = 0x00;
-    P1DIR = 0X7f;              // KHAI BAO P1.0 -> P1.6
-    //cau hinh timer
-    TACTL = TASSEL_2 + ID_3 + MC_1;       // CHON SMCLK CO F = 1MHZ, BO CHIA BANG 8, MODE DEM LEN
-    CCTL0 = CCIE;                       // cho phep tin hieu di qua
-    CCTL1 = CCIE; 
-    CCR0 = 600;                            // t = 4.8ms; f=1/t=208HZ; CCR0=fck/f=600;
-    CCR1 = 600;                            // t = 4.8ms; f=1/t=208HZ; CCR0=fck/f=600; 
-    __bis_SR_register(GIE);               //lenh ngat toan cuc su dung trong thu vien <io430>
+void main() {
+  // khoi dong chip
+  WDTCTL =  WDTPW + WDTHOLD; // TAT WATHCHDOG
+  P2DIR = 0xff;              // KHAI BAO P2.0 -> P2.7
+  P2SEL = 0x00;
+  P1DIR = 0X7f;              // KHAI BAO P1.0 -> P1.6
+  //cau hinh timer
+  TACTL = TASSEL_2 + ID_3 + MC_1;       // CHON SMCLK CO F = 1MHZ, BO CHIA BANG 8, MODE DEM LEN
+  CCTL0 = CCIE;                       // cho phep tin hieu di qua
+  CCTL1 = CCIE; 
+  CCR0 = 600;                            // t = 4.8ms; f=1/t=208HZ; CCR0=fck/f=600;
+  CCR1 = 600;                            // t = 4.8ms; f=1/t=208HZ; CCR0=fck/f=600; 
+  __bis_SR_register(GIE);               //lenh ngat toan cuc su dung trong thu vien <io430>
 
-    // khoi dong bien
-  while(1)
-  {
+  // khoi dong bien
+  while(1) {
       // nhan va xu ly INPUT  
       volts =( ReadADC10(7)* 3.3 ) /1023.0;
       amps = volts/10000.0; 
@@ -49,8 +47,7 @@ void main()
 }
 
 // ADC - chuyen tin hieu tuong tu tu cam bien sang tin hieu so cho vi dieu khien
-unsigned int ReadADC10(int chanel)
-{
+unsigned int ReadADC10(int chanel) {
     ADC10CTL0 = SREF_2 + ADC10SHT_2 + ADC10ON + REF2_5V + REFON; // V_ref+ = 3.3v
     ADC10AE0 |= (BIT0<<chanel);
     ADC10CTL1 |= (chanel*0x1000u);
@@ -62,8 +59,7 @@ unsigned int ReadADC10(int chanel)
 
 // ham timer
 #pragma vector = TIMER0_A0_VECTOR
-__interrupt void Timer0_A0 (void)
-{
+__interrupt void Timer0_A0 (void) {
     bjt();
     if( counter >= 600)  L5 = 1;
     else  L5 = 0; 
@@ -73,12 +69,9 @@ __interrupt void Timer0_A0 (void)
 
 //ham timer
 #pragma vector = TIMER0_A1_VECTOR
-__interrupt void Timer0_A1 (void)
-{
-  for(int i=0; i<20000; i++)
-  {
-      for(int ii=0; ii<3; ii++)  
-      {
+__interrupt void Timer0_A1 (void) {
+  for(int i=0; i<20000; i++) {
+      for(int ii=0; ii<3; ii++) {
           CTR = 0x00;
           DLED = dichh[idxx];
           CTR = (1<<idxx);
@@ -90,8 +83,7 @@ __interrupt void Timer0_A1 (void)
 }
 
 // ham quet led - lay du lieu led tu buff de dua ra man hinh led
-void bjt()
-{
+void bjt() {
       CTR = 0x00;
       DLED = dichled[buff[idx]];    
       CTR = (1<<idx);
@@ -99,8 +91,7 @@ void bjt()
       if(idx>=4) idx = 0;
 }
 // ham chuyen doi gia tri de truyen vao buff
-void led(int counter)
-{
+void led(int counter) {
     buff[3] = counter/1000;
     buff[2] = (counter%1000)/100;
     buff[1] = ((counter%1000)%100)/10;
@@ -108,12 +99,10 @@ void led(int counter)
 }
 
 // ham delay 
-void delayms(int ms) 
-{
+void delayms(int ms) {
     for(int i=0; i<ms; i++)
     __delay_cycles(1000);
 }
-
 
 
 

@@ -1,17 +1,19 @@
 #include "msp430g2553.h"
+
 #define SMCLK_F    1000000
 #define	BAUDRATE   9600 
+
 // Khai bao cac chuong trinh con su dung trong chuong trinh
 void Setup_Clock();     // Ham cai dat xung Clock
-void Setup_Uart();       // Ham cai dat UART
+void Setup_Uart();      // Ham cai dat UART
 void Setup_Timer();    // Ham cai dat Timer
-void Setup_ADC();     // Ham cai dat ADC
+void Setup_ADC();      // Ham cai dat ADC
 int GetAdcValue();     // Ham lay gia tri ADC
 void delayms(int ms);
 
-unsigned int k = 255;                     
-void main( void )                        
-{ 
+unsigned int k = 255;    
+
+void main( void ) { 
   WDTCTL = WDTPW + WDTHOLD;        
   Setup_Clock();                     
   Setup_Uart();                    
@@ -21,17 +23,14 @@ void main( void )
   P1DIR |= BIT6;                         
   P1SEL |= BIT6;       
   _BIS_SR(GIE);                          
- while (1)                                
-   {
+  while (1) {
      __no_operation();                    
    }                                     
 }                                         
 //------------Ham khoi tao xung Clock ------------------
-void Setup_Clock(void)                    
-{
-if (CALBC1_1MHZ == 0xFF)             // kiem tra tan so
-  {
-    while (1);                          
+void Setup_Clock(void) {
+  if (CALBC1_1MHZ == 0xFF) {              // kiem tra tan so
+      while (1);                          
   }
   DCOCTL = 0;                           // Xoa cai dat truoc do
   BCSCTL1 = CALBC1_1MHZ;                //thiet lap tan so 1 MHz
@@ -40,8 +39,7 @@ if (CALBC1_1MHZ == 0xFF)             // kiem tra tan so
   BCSCTL2 |= SELM_0 + DIVM_0;  //Chon nguon xug Clock CPU MCLK la DCO
 } 
 //-------------------Ham khoi tao Timer A -----------------
-void Setup_Timer(void)                   
-{
+void Setup_Timer(void) {
   TA0CCTL1 = OUTMOD_7; 
   TA0CCR0 = k; 
   TA0CTL  = TASSEL_2 + ID_3 + MC_1;   // Chon nguon xung Clock cho Timer la SMCLK | up mode
@@ -49,8 +47,7 @@ void Setup_Timer(void)
   }                                      
 //-------------------Ham khoi tao truyen thong UART-----------------
 
-void Setup_Uart(void)                   
-{
+void Setup_Uart(void) {
   unsigned int tempfactor;
   P1SEL |= BIT1 + BIT2;                   //Lua chon chuc nang cho module ngoai vi 1 tai chan P1.1 va P1.2 
   P1SEL2  |= BIT1 + BIT2;                 
@@ -67,10 +64,8 @@ void Setup_Uart(void)
 //-----------------Ham ngat nhan UART--------------------
 
 #pragma vector = USCIAB0RX_VECTOR         // Vector ngat nhan UART
-__interrupt void USCI0RX_ISR(void)        // Bat dau chuong trinh ngat nhan UART
-{
-  switch (UCA0RXBUF)         // So sanh gia tri trong thanh ghi UCA0RXBUF 
-    {
+__interrupt void USCI0RX_ISR(void) {      // Bat dau chuong trinh ngat nhan UART
+  switch (UCA0RXBUF) {                    // So sanh gia tri trong thanh ghi UCA0RXBUF 
     case 'a': TA0CCR1 = k;  break;      
     case 'b': TA0CCR1 = 0;  break;
     case 'c': UCA0TXBUF = (unsigned char)((GetAdcValue()*1.5*100)/1024);
@@ -82,8 +77,7 @@ __interrupt void USCI0RX_ISR(void)        // Bat dau chuong trinh ngat nhan UART
     }
 }                                
 //----------------------Ham khoi tao ADC-------------------
-void Setup_ADC(void)                   
-{
+void Setup_ADC(void) {
   ADC10CTL1 = INCH_5;                     // Chon kenh chuyen doi A5
   ADC10AE0 |= BIT5;                       // Loai kenh A5 khoi chuc nang GPIO
   ADC10CTL0 = SREF_1 + ADC10SHT_2 + ADC10ON + ENC + REFON;                   
@@ -95,10 +89,9 @@ int GetAdcValue(void) {
   while (!(ADC10CTL0 & ADC10IFG));        //Doi den khi chuyen doi xong ADC10
   return ADC10MEM;                        // Tra ve gia tri trong thanh ghi ADC10MEM
 }   
-void delayms(int ms){
+void delayms(int ms) {
   for(int i=0;i<ms;i++)
      __delay_cycles(1000);
 }
-
 
 
