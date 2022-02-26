@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\01_GPIO\01_GPIO_MSP430\01_GPIO_MSP430.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\02_GPIO\02_GPIO_MSP430\02_GPIO_MSP430.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\03_GPIO\03_GPIO_MSP430\03_GPIO_MSP430.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\04_GPIO\04_GPIO_MSP430\04_GPIO_MSP430.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>
