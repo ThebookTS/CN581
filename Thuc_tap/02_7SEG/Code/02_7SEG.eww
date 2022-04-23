@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer)\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer).ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer)\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer).ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\03_Doc_phim_don_hien_thi_LED_7_doan\03_Doc_phim_don_hien_thi_LED_7_doan.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>
