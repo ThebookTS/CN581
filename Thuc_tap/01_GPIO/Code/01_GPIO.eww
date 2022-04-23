@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\01_Dieu_khien_LED_don\01_Dieu_khien_LED_don.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\02_Doc_phim_don\02_Doc_phim_don.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\03_Doc_phim_don_[Ngat_Port_pin]\03_Doc_phim_don_[Ngat_Port_pin].ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\04_1_Doc_phim_don_va_dieu_khien_LED_don\04_1_Doc_phim_don_va_dieu_khien_LED.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\04_2_Doc_phim_don_va_dieu_khien_LED_don\04_2_Doc_phim_don_va_dieu_khien_LED_don.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>
