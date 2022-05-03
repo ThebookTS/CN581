@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\Yeu_cau_1\Yeu_cau_1.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\Yeu_cau_2\Yeu_cau_2.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\Yeu_cau_3\Yeu_cau_3.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\Yeu_cau_4\Yeu_cau_4.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\Yeu_cau_5\Yeu_cau_5.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\Yeu_cau_6\Yeu_cau_6.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>

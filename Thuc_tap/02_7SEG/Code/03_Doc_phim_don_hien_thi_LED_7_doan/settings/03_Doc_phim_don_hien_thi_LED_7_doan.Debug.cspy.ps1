@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\common\bin\cspybat" -f "D:\OneDrive - ctu.edu.vn\IAR\02_7SEG\Code\03_Doc_phim_don_hien_thi_LED_7_doan\settings\03_Doc_phim_don_hien_thi_LED_7_doan.Debug.general.xcl" --backend -f "D:\OneDrive - ctu.edu.vn\IAR\02_7SEG\Code\03_Doc_phim_don_hien_thi_LED_7_doan\settings\03_Doc_phim_don_hien_thi_LED_7_doan.Debug.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\common\bin\cspybat" -f "D:\GitHub\CN581\Thuc_tap\02_7SEG\Code\03_Doc_phim_don_hien_thi_LED_7_doan\settings\03_Doc_phim_don_hien_thi_LED_7_doan.Debug.general.xcl" --backend -f "D:\GitHub\CN581\Thuc_tap\02_7SEG\Code\03_Doc_phim_don_hien_thi_LED_7_doan\settings\03_Doc_phim_don_hien_thi_LED_7_doan.Debug.driver.xcl" 
 }
 else
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\common\bin\cspybat" -f "D:\OneDrive - ctu.edu.vn\IAR\02_7SEG\Code\03_Doc_phim_don_hien_thi_LED_7_doan\settings\03_Doc_phim_don_hien_thi_LED_7_doan.Debug.general.xcl" --debug_file=$debugfile --backend -f "D:\OneDrive - ctu.edu.vn\IAR\02_7SEG\Code\03_Doc_phim_don_hien_thi_LED_7_doan\settings\03_Doc_phim_don_hien_thi_LED_7_doan.Debug.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\common\bin\cspybat" -f "D:\GitHub\CN581\Thuc_tap\02_7SEG\Code\03_Doc_phim_don_hien_thi_LED_7_doan\settings\03_Doc_phim_don_hien_thi_LED_7_doan.Debug.general.xcl" --debug_file=$debugfile --backend -f "D:\GitHub\CN581\Thuc_tap\02_7SEG\Code\03_Doc_phim_don_hien_thi_LED_7_doan\settings\03_Doc_phim_don_hien_thi_LED_7_doan.Debug.driver.xcl" 
 }

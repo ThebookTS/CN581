@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\common\bin\cspybat" -f "D:\OneDrive - ctu.edu.vn\IAR\02_7SEG\Code\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer)\settings\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer).Debug.general.xcl" --backend -f "D:\OneDrive - ctu.edu.vn\IAR\02_7SEG\Code\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer)\settings\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer).Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\common\bin\cspybat" -f "D:\GitHub\CN581\Thuc_tap\02_7SEG\Code\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer)\settings\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer).Debug.general.xcl" --backend -f "D:\GitHub\CN581\Thuc_tap\02_7SEG\Code\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer)\settings\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer).Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\common\bin\cspybat" -f "D:\OneDrive - ctu.edu.vn\IAR\02_7SEG\Code\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer)\settings\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer).Debug.general.xcl" "--debug_file=%~1" --backend -f "D:\OneDrive - ctu.edu.vn\IAR\02_7SEG\Code\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer)\settings\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer).Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\common\bin\cspybat" -f "D:\GitHub\CN581\Thuc_tap\02_7SEG\Code\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer)\settings\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer).Debug.general.xcl" "--debug_file=%~1" --backend -f "D:\GitHub\CN581\Thuc_tap\02_7SEG\Code\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer)\settings\02_Hien_thi_LED_7_doan_QUET_(Ngat_Timer).Debug.driver.xcl" 
 
 @echo off 
 :end

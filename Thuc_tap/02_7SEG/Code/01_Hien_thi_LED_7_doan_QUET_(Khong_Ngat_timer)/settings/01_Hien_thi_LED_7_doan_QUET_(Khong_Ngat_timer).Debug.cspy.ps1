@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\common\bin\cspybat" -f "D:\OneDrive - ctu.edu.vn\IAR\02_7SEG\Code\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer)\settings\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer).Debug.general.xcl" --backend -f "D:\OneDrive - ctu.edu.vn\IAR\02_7SEG\Code\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer)\settings\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer).Debug.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\common\bin\cspybat" -f "D:\GitHub\CN581\Thuc_tap\02_7SEG\Code\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer)\settings\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer).Debug.general.xcl" --backend -f "D:\GitHub\CN581\Thuc_tap\02_7SEG\Code\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer)\settings\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer).Debug.driver.xcl" 
 }
 else
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\common\bin\cspybat" -f "D:\OneDrive - ctu.edu.vn\IAR\02_7SEG\Code\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer)\settings\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer).Debug.general.xcl" --debug_file=$debugfile --backend -f "D:\OneDrive - ctu.edu.vn\IAR\02_7SEG\Code\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer)\settings\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer).Debug.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\common\bin\cspybat" -f "D:\GitHub\CN581\Thuc_tap\02_7SEG\Code\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer)\settings\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer).Debug.general.xcl" --debug_file=$debugfile --backend -f "D:\GitHub\CN581\Thuc_tap\02_7SEG\Code\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer)\settings\01_Hien_thi_LED_7_doan_QUET_(Khong_Ngat_timer).Debug.driver.xcl" 
 }
