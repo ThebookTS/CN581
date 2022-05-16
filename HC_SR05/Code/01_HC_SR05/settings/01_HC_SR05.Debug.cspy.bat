@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\common\bin\cspybat" -f "D:\OneDrive - ctu.edu.vn\IAR\HC_SR05\Code\01_HC_SR05\settings\01_HC_SR05.Debug.general.xcl" --backend -f "D:\OneDrive - ctu.edu.vn\IAR\HC_SR05\Code\01_HC_SR05\settings\01_HC_SR05.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\BOOKTS_PC\Documents\0_GITHUB\CN581\HC_SR05\Code\01_HC_SR05\settings\01_HC_SR05.Debug.general.xcl" --backend -f "C:\Users\BOOKTS_PC\Documents\0_GITHUB\CN581\HC_SR05\Code\01_HC_SR05\settings\01_HC_SR05.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\common\bin\cspybat" -f "D:\OneDrive - ctu.edu.vn\IAR\HC_SR05\Code\01_HC_SR05\settings\01_HC_SR05.Debug.general.xcl" "--debug_file=%~1" --backend -f "D:\OneDrive - ctu.edu.vn\IAR\HC_SR05\Code\01_HC_SR05\settings\01_HC_SR05.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\BOOKTS_PC\Documents\0_GITHUB\CN581\HC_SR05\Code\01_HC_SR05\settings\01_HC_SR05.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\BOOKTS_PC\Documents\0_GITHUB\CN581\HC_SR05\Code\01_HC_SR05\settings\01_HC_SR05.Debug.driver.xcl" 
 
 @echo off 
 :end

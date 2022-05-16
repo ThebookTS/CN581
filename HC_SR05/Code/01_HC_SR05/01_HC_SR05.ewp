@@ -753,11 +753,11 @@
                 <debug>1</debug>
                 <option>
                     <name>XOutOverride</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>OutputFile</name>
-                    <state>01_HC_SR05.d43</state>
+                    <state>01_HC_SR05.hex</state>
                 </option>
                 <option>
                     <name>OutputFormat</name>

@@ -1,10 +1,10 @@
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\430\bin\430proc.dll" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\430\bin\430proc.dll" 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\430\bin\430fet.dll" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\430\bin\430sim.dll" 
 
-"D:\OneDrive - ctu.edu.vn\IAR\HC_SR05\Code\01_HC_SR05\Debug\Exe\01_HC_SR05.d43" 
+"C:\Users\BOOKTS_PC\Documents\0_GITHUB\CN581\HC_SR05\Code\01_HC_SR05\Debug\Exe\01_HC_SR05.hex" 
 
---plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\430\bin\430bat.dll" 
+--plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\430\bin\430bat.dll" 
 
 
 
