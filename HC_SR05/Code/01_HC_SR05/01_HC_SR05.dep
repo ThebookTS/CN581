@@ -5,57 +5,21 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
-            <file>$PROJ_DIR$\Debug\List\01_HC_SR05.map</file>
-            <file>$TOOLKIT_DIR$\inc\in430.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
-            <file>$TOOLKIT_DIR$\config\linker\lnk430g2553.xcl</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
             <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
             <file>$TOOLKIT_DIR$\inc\msp430g2253.h</file>
             <file>$PROJ_DIR$\main.c</file>
             <file>$PROJ_DIR$\Debug\Exe\01_HC_SR05.d43</file>
+            <file>$TOOLKIT_DIR$\config\linker\lnk430g2553.xcl</file>
             <file>$PROJ_DIR$\Debug\Obj\01_HC_SR05.pbd</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+            <file>$TOOLKIT_DIR$\inc\in430.h</file>
             <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
-            <file>$PROJ_DIR$\Debug\Exe\01_HC_SR05.ulp</file>
             <file>$PROJ_DIR$\Debug\Exe\01_HC_SR05.hex</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Exe\01_HC_SR05.ulp</file>
+            <file>$PROJ_DIR$\Debug\List\01_HC_SR05.map</file>
         </outputs>
-        <file>
-            <name>$PROJ_DIR$\main.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 3</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 6</file>
-                </tool>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 5</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 7 2 0</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 0 2 7</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\Debug\Exe\01_HC_SR05.d43</name>
-            <inputs>
-                <tool>
-                    <name>XLINK</name>
-                    <file> 4 3 11</file>
-                </tool>
-            </inputs>
-        </file>
         <file>
             <name>[ROOT_NODE]</name>
             <outputs>
@@ -65,22 +29,58 @@
                 </tool>
                 <tool>
                     <name>XLINK</name>
-                    <file> 13 1</file>
+                    <file> 13 10</file>
                 </tool>
             </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 6</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 0</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 11</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 1 8 7</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 7 8 1</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\01_HC_SR05.d43</name>
+            <inputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 4 6 9</file>
+                </tool>
+            </inputs>
         </file>
         <file>
             <name>$PROJ_DIR$\Debug\Exe\01_HC_SR05.hex</name>
             <outputs>
                 <tool>
                     <name>XLINK</name>
-                    <file> 1</file>
+                    <file> 13</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>XLINK</name>
-                    <file> 4 3 11</file>
+                    <file> 4 6 9</file>
                 </tool>
             </inputs>
         </file>

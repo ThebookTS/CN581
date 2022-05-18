@@ -6,33 +6,20 @@
         <name>Debug</name>
         <outputs>
             <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-            <file>$PROJ_DIR$\Debug\Exe\01_GPIO_MSP430.hex</file>
-            <file>$TOOLKIT_DIR$\inc\io430g2553.h</file>
-            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
-            <file>$PROJ_DIR$\Debug\Exe\01_GPIO_MSP430.d43</file>
             <file>$PROJ_DIR$\main.c</file>
             <file>$PROJ_DIR$\Debug\Exe\01_GPIO_MSP430.ulp</file>
+            <file>$PROJ_DIR$\Debug\Exe\01_GPIO_MSP430.d43</file>
+            <file>$TOOLKIT_DIR$\inc\io430g2553.h</file>
             <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+            <file>$PROJ_DIR$\Debug\Exe\01_GPIO_MSP430.hex</file>
         </outputs>
-        <file>
-            <name>[ROOT_NODE]</name>
-            <outputs>
-                <tool>
-                    <name>ULP430</name>
-                    <file> 6</file>
-                </tool>
-                <tool>
-                    <name>XLINK</name>
-                    <file> 4 1</file>
-                </tool>
-            </outputs>
-        </file>
         <file>
             <name>$PROJ_DIR$\main.c</name>
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 7</file>
+                    <file> 5</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
@@ -42,13 +29,26 @@
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 2 3</file>
+                    <file> 4 6</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 3 2</file>
+                    <file> 6 4</file>
                 </tool>
             </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 3 7</file>
+                </tool>
+                <tool>
+                    <name>ULP430</name>
+                    <file> 2</file>
+                </tool>
+            </outputs>
         </file>
         <forcedrebuild>
             <name>[MULTI_TOOL]</name>

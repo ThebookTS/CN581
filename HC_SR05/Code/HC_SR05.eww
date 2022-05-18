@@ -3,5 +3,8 @@
     <project>
         <path>$WS_DIR$\01_HC_SR05\01_HC_SR05.ewp</path>
     </project>
+    <project>
+        <path>$WS_DIR$\02_HC_SR05\02_HC_SR05.ewp</path>
+    </project>
     <batchBuild />
 </workspace>
