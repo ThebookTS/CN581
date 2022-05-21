@@ -39,6 +39,8 @@ void main() {
   while(1) {
     int distance = readDistance();
     delayms(50);
+    countbuff(distance);
+    scanled();
   }
 }
 // Ham delay ms
@@ -53,9 +55,9 @@ void initTimer() {
   TACTL = TASSEL_2 + ID_0 + MC_1;
   // Cho phep CCR0 ngat
   CCTL0 = CCIE;
-  CCTL1 = CCIE;
+  //CCTL1 = CCIE;
   CCR0 = 1000;
-  CCR1 = 625;
+  //CCR1 = 625;
 }
 // Cau hinh chan
 void initIO() {
@@ -102,14 +104,15 @@ __interrupt void Port_1 (void) {
 #pragma vector=TIMER0_A0_VECTOR
 __interrupt void Timer_A(void) {
   miliseconds++;
+  scanled();
 }
 
 // Vector ngat
-#pragma vector=TIMER0_A1_VECTOR
-__interrupt void Timer0_A1 (void) {
+//#pragma vector=TIMER0_A1_VECTOR
+//__interrupt void Timer0_A1 (void) {
   // quet led 5ms
-  scanled();
-}
+//  scanled();
+//}
 
 void scanled(){
   D7SEG = tbl7segA[buff[idx]];
@@ -146,8 +149,8 @@ void scanled(){
 
 // Tach so
 void countbuff(int counter){
-  buff[3] = counter/1000;
-  buff[2] = (counter%1000)/100;
-  buff[1] = ((counter%1000)%100)/10;
-  buff[0] = counter%10;
+  buff[0] = counter/1000;
+  buff[1] = (counter%1000)/100;
+  buff[2] = ((counter%1000)%100)/10;
+  buff[3] = counter%10;
 }

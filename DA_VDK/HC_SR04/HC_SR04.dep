@@ -5,60 +5,59 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\Debug\List\HC_SR04.map</file>
-            <file>$PROJ_DIR$\Debug\Exe\HC_SR04.hex</file>
+            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
             <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\Debug\Exe\HC_SR04.hex</file>
             <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-            <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
-            <file>$PROJ_DIR$\Debug\Exe\HC_SR04.d43</file>
+            <file>$TOOLKIT_DIR$\inc\msp430g2253.h</file>
             <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\HC_SR04.pbd</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Exe\HC_SR04.d43</file>
+            <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
             <file>$TOOLKIT_DIR$\config\linker\lnk430g2553.xcl</file>
+            <file>$PROJ_DIR$\Debug\List\HC_SR04.map</file>
             <file>$PROJ_DIR$\Debug\Exe\HC_SR04.ulp</file>
             <file>$TOOLKIT_DIR$\inc\in430.h</file>
-            <file>$TOOLKIT_DIR$\inc\msp430g2253.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
-            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
         </outputs>
-        <file>
-            <name>$PROJ_DIR$\Debug\Exe\HC_SR04.hex</name>
-            <outputs>
-                <tool>
-                    <name>XLINK</name>
-                    <file> 0</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>XLINK</name>
-                    <file> 8 6 4</file>
-                </tool>
-            </inputs>
-        </file>
         <file>
             <name>$PROJ_DIR$\main.c</name>
             <outputs>
                 <tool>
-                    <name>__cstat</name>
-                    <file> 12</file>
-                </tool>
-                <tool>
                     <name>ICC430</name>
-                    <file> 6</file>
+                    <file> 5</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
                     <file> 3</file>
                 </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 6</file>
+                </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 11 10 13</file>
+                    <file> 4 12 0</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 13 10 11</file>
+                    <file> 0 12 4</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\HC_SR04.hex</name>
+            <outputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 10</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 9 5 8</file>
                 </tool>
             </inputs>
         </file>
@@ -67,7 +66,7 @@
             <inputs>
                 <tool>
                     <name>XLINK</name>
-                    <file> 8 6 4</file>
+                    <file> 9 5 8</file>
                 </tool>
             </inputs>
         </file>
@@ -75,12 +74,12 @@
             <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
-                    <name>XLINK</name>
-                    <file> 1 0</file>
+                    <name>ULP430</name>
+                    <file> 11</file>
                 </tool>
                 <tool>
-                    <name>ULP430</name>
-                    <file> 9</file>
+                    <name>XLINK</name>
+                    <file> 10 2</file>
                 </tool>
             </outputs>
         </file>
