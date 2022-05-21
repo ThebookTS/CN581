@@ -25,9 +25,10 @@ void main()
   //----Stop watchdog timer to prevent time out reset
   WDTCTL = WDTPW + WDTHOLD;
   //-------------cau hinh IO-------------------------------
-  P2DIR = 0x7F;
-  P1DIR = BIT4 + BIT5 + BIT6 + BIT7;
-  
+  P2DIR = 0xff;         // 1111 1111
+  P1DIR |= BIT4 + BIT5 + BIT6 + BIT7;
+  P2OUT = 0x00;
+  delayms(2000);
   interval = 0;
   counter = 0;
   //--------Khoi dong timer------------------------------
@@ -42,7 +43,7 @@ void main()
       counter++;
     }   
    countbuff(counter);
-   delayms(100);
+   delayms(200);
   }
 }
 

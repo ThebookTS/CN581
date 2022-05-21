@@ -3,15 +3,14 @@
 
 // Khai bao chan HCSR04
 #define Trig BIT0
-#define Echo BIT1
-#define LED BIT6
+#define Echo BIT2
 
 // Khai bao chan LED
-#define D7SEG   P1OUT
-#define C6      BIT2
-#define C8      BIT3
-#define C9      BIT4
-#define C12     BIT5
+#define D7SEG   P2OUT
+#define C1      BIT4
+#define C2      BIT5
+#define C3      BIT6
+#define C4      BIT7
 
 // Khai bao bien toan cuc
 int miliseconds, hcsr04;
@@ -29,24 +28,20 @@ void scanled();
 void countbuff();
 
 void main() {
-  WDTCTL = WDTPW + WDTHOLD;     // Khoi dong chip
+WDTCTL = WDTPW + WDTHOLD;     // Khoi dong chip
   
   initTimer();                  // Cau hinh timer
   initIO();                     // Cau hinh chan
-  
-  P2IFG = 0x00;                 // Xoa tat ca cac co ngat Port1
+  P1IFG = 0x00;                 // Xoa tat ca cac co ngat Port1
+//  P2IFG = 0x00;                 // Xoa tat ca cac co ngat Port1
   _BIS_SR(GIE);                 // Cho phep ngat toan cuc 
   // Vong lap chuong trinh chinh
   while(1) {
-  //  int distance = readDistance();
-    //delayms(100);
-    //countbuff(2000);
-    //delayms(100);
-  
-  int distance = readDistance();
-    //delayms(200);
-    if ((distance <= 20)&&(distance > 2))       P1OUT |= LED;
-    else        P1OUT &= ~LED;
+    int distance = readDistance();
+    delayms(100);
+    countbuff(distance);
+    delayms(100);
+   
   }
 }
 // Ham delay ms
@@ -67,20 +62,25 @@ void initTimer() {
 }
 // Cau hinh chan
 void initIO() {
-   P2DIR |= 0x3d;               // 0011 1101
-   P1DIR = 0x7f;
+   P2DIR |= 0xff;               // 1111 1111
+   P1DIR |= Trig;
+   P1DIR &= ~Echo;
+   P1DIR |= C1;
+   P1DIR |= C2;
+   P1DIR |= C3;
+   P1DIR |= C4;
 }
 // Ham doc khoang cach
 int readDistance() {
-  P2IE &= ~Trig;                // Ngat P1.0
+  P1IE &= ~Trig;                // Ngat P1.0
   
-  P2OUT |= Trig;                // Trig muc 1
+  P1OUT |= Trig;                // Trig muc 1
   __delay_cycles(10);           // delay 10 (us)
-  P2OUT &= ~Trig;               // Trig muc 0
+  P1OUT &= ~Trig;               // Trig muc 0
   
-  P2IFG = 0x00;                 // Xoa tat ca co ngat Port1
-  P2IE |= Echo;                 // Cho phep ngat echo 
-  P2IES &= ~Echo;               // Ngat canh len
+  P1IFG = 0x00;                 // Xoa tat ca co ngat Port1
+  P1IE |= Echo;                 // Cho phep ngat echo 
+  P1IES &= ~Echo;               // Ngat canh len
   delayms(30);                  // Delay 30 (ms)
     
   int distance = hcsr04/58;     // Tinh toan khoang cach
@@ -88,16 +88,16 @@ int readDistance() {
 }
 
 // Chuong trinh con ngat
-#pragma vector=PORT2_VECTOR
-__interrupt void Port_2 (void) {
-  if(P2IFG&Echo) {              // Cho xu ly
-    if(!(P2IES&Echo)) {         // Co ngat hay khong
+#pragma vector=PORT1_VECTOR
+__interrupt void Port_1 (void) {
+  if(P1IFG&Echo) {              // Cho xu ly
+    if(!(P1IES&Echo)) {         // Co ngat hay khong
       TACTL |= TACLR;
       miliseconds = 0;
-      P2IES |= Echo;
+      P1IES |= Echo;
     }
     else hcsr04 = (long)miliseconds*1000 + (long)TAR;           // Do do rong xung
-    P2IFG &= ~Echo;             // Xoa co ngat Echo
+    P1IFG &= ~Echo;             // Xoa co ngat Echo
   }
 }
 
@@ -107,24 +107,36 @@ __interrupt void Timer_A(void) {
 }
 #pragma vector=TIMER0_A1_VECTOR
 __interrupt void Timer_A1(void) {
-  //scanled();
+  scanled();
 }
 void scanled(){
   D7SEG = tbl7segA[buff[idx]];
   // Dieu khien LED idx sang
   switch(idx){ 
-    case 0: 
-      P2OUT = 0x04;
-      break;	        // LED 1
-    case 1: 
-      P2OUT = 0x08;    
-      break; 	        // LED 2
-    case 2: 
-       P2OUT = 0x10;     
-      break; 	        // LED 3
-    case 3: 
-      P2OUT = 0x20; 
-      break;            // LED 4
+    case 0:             // LED 1
+      P1OUT |=  C1;
+      P1OUT &= ~C2;
+      P1OUT &= ~C3;
+      P1OUT &= ~C4;
+      break;	        
+    case 1:             // LED 2
+      P1OUT &= ~C1;
+      P1OUT |=  C2;
+      P1OUT &= ~C3;
+      P1OUT &= ~C4;  
+      break; 	       
+    case 2:             // LED 3
+      P1OUT &= ~C1;
+      P1OUT &= ~C2;
+      P1OUT |=  C3;
+      P1OUT &= ~C4;     
+      break; 	        
+    case 3:             // LED 4
+      P1OUT &= ~C1;
+      P1OUT &= ~C2;
+      P1OUT &= ~C3;
+      P1OUT |=  C4;
+      break;            
   }
   idx++;
   if (idx>=4) idx = 0;
@@ -132,8 +144,8 @@ void scanled(){
 
 // Tach so
 void countbuff(int counter){
-  buff[0] = counter/1000;
-  buff[1] = (counter%1000)/100;
-  buff[2] = ((counter%1000)%100)/10;
-  buff[3] = counter%10;
+  buff[3] = counter/1000;
+  buff[2] = (counter%1000)/100;
+  buff[1] = ((counter%1000)%100)/10;
+  buff[0] = counter%10;
 }

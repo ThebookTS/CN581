@@ -49,7 +49,7 @@
         <FreqHi>0</FreqHi>
     </Simulator>
     <DebugChecksum>
-        <Checksum>1251818289</Checksum>
+        <Checksum>4099740671</Checksum>
     </DebugChecksum>
     <EEM_State_Storage>
         <Buffer>010000000300000000000000</Buffer>
@@ -79,15 +79,6 @@
         <LiveEnabled>0</LiveEnabled>
         <LiveFile>PowerLogLive.log</LiveFile>
     </PowerLog>
-    <PowerProbe>
-        <Frequency>10000</Frequency>
-        <Probe0>Current</Probe0>
-        <ProbeSetup0>0 1 1 2 0 0</ProbeSetup0>
-        <Probe1>Voltage</Probe1>
-        <ProbeSetup1>1 1 1 4 0 0</ProbeSetup1>
-        <Probe2>Energy</Probe2>
-        <ProbeSetup2>4 1 1 10 0 0</ProbeSetup2>
-    </PowerProbe>
     <LogFile>
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
@@ -97,11 +88,20 @@
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
     </TermIOLog>
+    <PowerProbe>
+        <Frequency>10000</Frequency>
+        <Probe0>Current</Probe0>
+        <ProbeSetup0>0 1 1 2 0 0</ProbeSetup0>
+        <Probe1>Voltage</Probe1>
+        <ProbeSetup1>1 1 1 4 0 0</ProbeSetup1>
+        <Probe2>Energy</Probe2>
+        <ProbeSetup2>4 1 1 10 0 0</ProbeSetup2>
+    </PowerProbe>
     <Breakpoints>
         <Count>0</Count>
     </Breakpoints>
     <FET>
-        <Clock_mode>38</Clock_mode>
+        <Clock_mode>39</Clock_mode>
         <Secure_Password />
         <Extended_Clock_Control_Enable>1</Extended_Clock_Control_Enable>
         <Advanced_Extended_Clock_Control>0</Advanced_Extended_Clock_Control>
