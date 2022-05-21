@@ -1,11 +1,10 @@
 // BooKTS
 #include "msp430g2253.h"
 
-// Khai bao chan HCSR04
+// Khai bao chan
 #define Trig BIT0
 #define Echo BIT2
 
-// Khai bao chan LED
 #define D7SEG   P2OUT
 #define C1      BIT4
 #define C2      BIT5
@@ -13,11 +12,10 @@
 #define C4      BIT7
 
 // Khai bao bien toan cuc
-int miliseconds, hcsr04;
-// Khai bao bien LED 7 doan
 int  idx = 0;
 unsigned char tbl7segA[]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90}; // bang ma LED 7SEG ANODE chung
 char buff[4]={1,2,3,4};
+int miliseconds, hcsr04;
 
 // Khai bao ham
 void delayms(int ms);
@@ -28,20 +26,19 @@ void scanled();
 void countbuff();
 
 void main() {
-WDTCTL = WDTPW + WDTHOLD;     // Khoi dong chip
+  WDTCTL = WDTPW + WDTHOLD;     // Khoi dong chip
   
-  initTimer();                  // Cau hinh timer
   initIO();                     // Cau hinh chan
-  P1IFG = 0x00;                 // Xoa tat ca cac co ngat Port1
-//  P2IFG = 0x00;                 // Xoa tat ca cac co ngat Port1
-  _BIS_SR(GIE);                 // Cho phep ngat toan cuc 
+  initTimer();                  // Cau hinh timer
+  
+  P1IFG = 0x00;
+  
+  _BIS_SR(GIE);                 // Cho phep ngat toan cuc
+   
   // Vong lap chuong trinh chinh
   while(1) {
     int distance = readDistance();
-    delayms(100);
-    countbuff(distance);
-    delayms(100);
-   
+    delayms(50);
   }
 }
 // Ham delay ms
@@ -62,13 +59,14 @@ void initTimer() {
 }
 // Cau hinh chan
 void initIO() {
-   P2DIR |= 0xff;               // 1111 1111
-   P1DIR |= Trig;
+   P1DIR |=  Trig;
    P1DIR &= ~Echo;
-   P1DIR |= C1;
-   P1DIR |= C2;
-   P1DIR |= C3;
-   P1DIR |= C4;
+   P1DIR |=  C1;
+   P1DIR |=  C2;
+   P1DIR |=  C3;
+   P1DIR |=  C4;
+   P2DIR |=  0xff;
+   
 }
 // Ham doc khoang cach
 int readDistance() {
@@ -105,38 +103,42 @@ __interrupt void Port_1 (void) {
 __interrupt void Timer_A(void) {
   miliseconds++;
 }
+
+// Vector ngat
 #pragma vector=TIMER0_A1_VECTOR
-__interrupt void Timer_A1(void) {
+__interrupt void Timer0_A1 (void) {
+  // quet led 5ms
   scanled();
 }
+
 void scanled(){
   D7SEG = tbl7segA[buff[idx]];
   // Dieu khien LED idx sang
-  switch(idx){ 
+  switch(idx){          
     case 0:             // LED 1
-      P1OUT |=  C1;
-      P1OUT &= ~C2;
-      P1OUT &= ~C3;
-      P1OUT &= ~C4;
-      break;	        
-    case 1:             // LED 2
-      P1OUT &= ~C1;
-      P1OUT |=  C2;
-      P1OUT &= ~C3;
-      P1OUT &= ~C4;  
-      break; 	       
-    case 2:             // LED 3
-      P1OUT &= ~C1;
-      P1OUT &= ~C2;
-      P1OUT |=  C3;
-      P1OUT &= ~C4;     
-      break; 	        
-    case 3:             // LED 4
-      P1OUT &= ~C1;
-      P1OUT &= ~C2;
-      P1OUT &= ~C3;
-      P1OUT |=  C4;
-      break;            
+        P1OUT |=  C1;            
+        P1OUT &= ~C2;
+        P1OUT &= ~C3;
+        P1OUT &= ~C4;
+        break;
+    case 1: 
+        P1OUT &= ~C1;            
+        P1OUT |=  C2;
+        P1OUT &= ~C3;
+        P1OUT &= ~C4;   
+        break;
+    case 2: 
+        P1OUT &= ~C1;            
+        P1OUT &= ~C2;
+        P1OUT |=  C3;
+        P1OUT &= ~C4;    
+        break;
+    case 3: 
+        P1OUT &= ~C1;            
+        P1OUT &= ~C2;
+        P1OUT &= ~C3;
+        P1OUT |=  C4;
+        break;
   }
   idx++;
   if (idx>=4) idx = 0;

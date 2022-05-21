@@ -27,23 +27,20 @@ void main()
   //-------------cau hinh IO-------------------------------
   P2DIR = 0xff;         // 1111 1111
   P1DIR |= BIT4 + BIT5 + BIT6 + BIT7;
-  P2OUT = 0x00;
-  delayms(2000);
-  interval = 0;
-  counter = 0;
+
   //--------Khoi dong timer------------------------------
   TA0CTL = TASSEL_2 + ID_3 + MC_1;
   TA0CCTL0 = CCIE;
-  TA0CCR0 =625;
+  
   __bis_SR_register(GIE);
 
   while(1){
-    if (interval++>20) {
+    if (interval++>10) {
       interval = 0;
       counter++;
     }   
-   countbuff(counter);
-   delayms(200);
+    countbuff(counter);
+    delayms(50);
   }
 }
 

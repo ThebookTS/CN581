@@ -4,8 +4,7 @@
 // Khai bao chan
 #define Trig BIT0
 #define Echo BIT2
-#define LED1  BIT6
-#define LED2  BIT6
+#define LED  BIT6
 
 // Khai bao bien toan cuc
 int miliseconds, hcsr04;
@@ -33,12 +32,10 @@ void main() {
     int distance = readDistance();
     //delayms(200);
     if (distance > 5) {
-      P2OUT |= LED1;       
-      P2OUT |= LED2;
+      P1OUT |= LED;   
     }
     else {
-      P2OUT &= ~LED1;
-      P2OUT &= ~LED2;
+      P1OUT &= ~LED;
     }
   }
 }
@@ -61,11 +58,7 @@ void initTimer() {
 void initIO() {
    P1DIR |= Trig;                        // 0100 0001
    P1DIR &= ~Echo;
-   //  P2REN = BIT1;
- //  P2OUT = BIT1;
-   //P2DIR &= ~Echo;
-   P2DIR |= LED1;   // 0100 0000
-   P1DIR |= LED2;   // 0100 0000
+   P1DIR |= LED;   // 0100 0000
 }
 // Ham doc khoang cach
 int readDistance() {

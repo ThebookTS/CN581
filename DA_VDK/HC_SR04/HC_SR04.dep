@@ -12,6 +12,7 @@
             <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
             <file>$PROJ_DIR$\Debug\Exe\HC_SR04.d43</file>
             <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\HC_SR04.pbd</file>
             <file>$TOOLKIT_DIR$\config\linker\lnk430g2553.xcl</file>
             <file>$PROJ_DIR$\Debug\Exe\HC_SR04.ulp</file>
             <file>$TOOLKIT_DIR$\inc\in430.h</file>
@@ -30,7 +31,7 @@
             <inputs>
                 <tool>
                     <name>XLINK</name>
-                    <file> 7 6 4</file>
+                    <file> 8 6 4</file>
                 </tool>
             </inputs>
         </file>
@@ -39,7 +40,7 @@
             <outputs>
                 <tool>
                     <name>__cstat</name>
-                    <file> 11</file>
+                    <file> 12</file>
                 </tool>
                 <tool>
                     <name>ICC430</name>
@@ -53,11 +54,11 @@
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 10 9 12</file>
+                    <file> 11 10 13</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 12 9 10</file>
+                    <file> 13 10 11</file>
                 </tool>
             </inputs>
         </file>
@@ -66,7 +67,7 @@
             <inputs>
                 <tool>
                     <name>XLINK</name>
-                    <file> 7 6 4</file>
+                    <file> 8 6 4</file>
                 </tool>
             </inputs>
         </file>
@@ -79,7 +80,7 @@
                 </tool>
                 <tool>
                     <name>ULP430</name>
-                    <file> 8</file>
+                    <file> 9</file>
                 </tool>
             </outputs>
         </file>
