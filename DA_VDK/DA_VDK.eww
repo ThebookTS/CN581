@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\0_DA_VDK\0_DA_VDK.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\7SEG\7SEG.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\HC_SR04\HC_SR04.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>
