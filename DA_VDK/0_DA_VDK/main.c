@@ -41,6 +41,7 @@ void main() {
     delayms(50);
     countbuff(distance);
     scanled();
+    delayms(50);
   }
 }
 // Ham delay ms
@@ -52,11 +53,11 @@ void initTimer() {
   BCSCTL1 = CALBC1_1MHZ;
   DCOCTL  = CALDCO_1MHZ;
   // Chon che do SMCLK va Upmode 
-  TACTL = TASSEL_2 + ID_0 + MC_1;
+  TACTL = TASSEL_2 + ID_0 + MC_1;                       // TASSEL 2: Chon xung clock SMCLK 1MHz
   // Cho phep CCR0 ngat
   CCTL0 = CCIE;
   //CCTL1 = CCIE;
-  CCR0 = 1000;
+  CCR0 = 2000;                // chu ky ngat = f_ck / f_CCR0
   //CCR1 = 625;
 }
 // Cau hinh chan
@@ -119,30 +120,31 @@ void scanled(){
   // Dieu khien LED idx sang
   switch(idx){          
     case 0:             // LED 1
-        P1OUT |=  C1;            
-        P1OUT &= ~C2;
+        P1OUT |=  C1;
+        P1OUT &= ~C2; 
         P1OUT &= ~C3;
         P1OUT &= ~C4;
         break;
-    case 1: 
-        P1OUT &= ~C1;            
+    case 1:             // LED 2
+        P1OUT &= ~C1;         
         P1OUT |=  C2;
         P1OUT &= ~C3;
-        P1OUT &= ~C4;   
+        P1OUT &= ~C4;
         break;
-    case 2: 
-        P1OUT &= ~C1;            
-        P1OUT &= ~C2;
-        P1OUT |=  C3;
-        P1OUT &= ~C4;    
+    case 2:             // LED 3
+        P1OUT &= ~C1;
+        P1OUT &= ~C2; 
+        P1OUT |=  C3; 
+        P1OUT &= ~C4;
         break;
-    case 3: 
-        P1OUT &= ~C1;            
+    case 3:             // LED 4
+        P1OUT &= ~C1;
         P1OUT &= ~C2;
         P1OUT &= ~C3;
         P1OUT |=  C4;
         break;
   }
+  __delay_cycles(100);
   idx++;
   if (idx>=4) idx = 0;
 }

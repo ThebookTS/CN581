@@ -14,7 +14,8 @@ void countbuff();
 
 //-------------khai bao bien--------------------
 int  idx = 0;
-unsigned char tbl7segA[]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90}; // bang ma LED 7SEG ANODE chung
+//                          0    1    2    3    4    5    6    7    8    9
+unsigned char tbl7segA[]={0xC0,0x79,0x24,0x30,0x19,0x12,0x02,0xF8,0x00,0x10}; // bang ma LED 7SEG ANODE chung
 char buff[4]={1,2,3,4};
 int interval = 0;
 int counter = 0;
@@ -23,7 +24,7 @@ int counter = 0;
 void main()
 {
   //----Stop watchdog timer to prevent time out reset
-  WDTCTL = WDTPW + WDTHOLD;
+   WDTCTL = WDTPW + WDTHOLD;
   //-------------cau hinh IO-------------------------------
   P2DIR = 0xff;         // 1111 1111
   P1DIR |= BIT4 + BIT5 + BIT6 + BIT7;
@@ -31,6 +32,9 @@ void main()
   //--------Khoi dong timer------------------------------
   TA0CTL = TASSEL_2 + ID_3 + MC_1;
   TA0CCTL0 = CCIE;
+  TA0CCR0 = 625;
+  interval = 0;
+  counter = 0;
   
   __bis_SR_register(GIE);
 
