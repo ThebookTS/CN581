@@ -1220,7 +1220,7 @@
                 </option>
                 <option>
                     <name>Input description</name>
-                    <state>Full formatting.</state>
+                    <state>No specifier n, no float or long long.</state>
                 </option>
                 <option>
                     <name>Output variant</name>
@@ -1229,7 +1229,7 @@
                 </option>
                 <option>
                     <name>Output description</name>
-                    <state>Full formatting.</state>
+                    <state>No specifier a or A.</state>
                 </option>
                 <option>
                     <name>GRuntimeLibSelectSlave</name>
@@ -1246,7 +1246,7 @@
                 </option>
                 <option>
                     <name>OGChipSelectMenu</name>
-                    <state>MSP430F149	MSP430F149</state>
+                    <state>MSP430G2553	MSP430G2553</state>
                 </option>
                 <option>
                     <name>GStackHeapOverride</name>
@@ -1266,7 +1266,7 @@
                 </option>
                 <option>
                     <name>GHeap20Size</name>
-                    <state>###Uninitialized###</state>
+                    <state>80</state>
                 </option>
                 <option>
                     <name>GeneralMisraRules98</name>
@@ -1373,7 +1373,7 @@
                 </option>
                 <option>
                     <name>Math description</name>
-                    <state></state>
+                    <state>Default variants of cos, sin, tan, log, log10, pow, and exp.</state>
                 </option>
                 <option>
                     <name>GESupportFrwp</name>
@@ -1515,7 +1515,7 @@
                 </option>
                 <option>
                     <name>OutputFile</name>
-                    <state></state>
+                    <state>$FILE_BNAME$.r43</state>
                 </option>
                 <option>
                     <name>CCLibConfigHeader</name>
@@ -1592,7 +1592,7 @@
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
-                    <state>1</state>
+                    <state>3</state>
                 </option>
                 <option>
                     <name>CInput</name>
@@ -1836,7 +1836,7 @@
                 </option>
                 <option>
                     <name>OutputFile</name>
-                    <state></state>
+                    <state>$FILE_BNAME$.r43</state>
                 </option>
                 <option>
                     <name>AMultibyteSupport</name>
@@ -1907,7 +1907,7 @@
                 </option>
                 <option>
                     <name>OutputFile</name>
-                    <state>templproj.txt</state>
+                    <state>7SEG.d43</state>
                 </option>
                 <option>
                     <name>OutputFormat</name>
@@ -1973,7 +1973,7 @@
                 </option>
                 <option>
                     <name>XclFile</name>
-                    <state>$TOOLKIT_DIR$\CONFIG\lnk430F149.xcl</state>
+                    <state>$TOOLKIT_DIR$\config\linker\lnk430g2553.xcl</state>
                 </option>
                 <option>
                     <name>XclFileSlave</name>
@@ -2065,7 +2065,7 @@
                 </option>
                 <option>
                     <name>DebugInformation</name>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>RuntimeControl</name>
@@ -2101,7 +2101,7 @@
                 </option>
                 <option>
                     <name>ExtraOutputFile</name>
-                    <state>templproj.a43</state>
+                    <state>7SEG.a43</state>
                 </option>
                 <option>
                     <name>ExtraOutputFormat</name>
@@ -2270,7 +2270,11 @@
                 <debug>0</debug>
                 <option>
                     <name>CUTest</name>
-                    <state>###Uninitialized###</state>
+                    <state>-I$TOOLKIT_DIR$\inc</state>
+                    <state>-@$TOOLKIT_DIR$\bin\iar.cmd</state>
+                    <state>-@$PROJ_DIR$\source.txt</state>
+                    <state>-@$PROJ_DIR$\include.txt</state>
+                    <state>--preinclude=$PROJ_DIR$\IAR_ULPAdvisor_Defs.h</state>
                 </option>
                 <option>
                     <name>ULPRules</name>
@@ -2283,7 +2287,7 @@
                 </option>
                 <option>
                     <name>OutputFile</name>
-                    <state></state>
+                    <state>$PROJ_FNAME$.ulp</state>
                 </option>
                 <option>
                     <name>ULPStatus</name>

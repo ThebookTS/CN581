@@ -1,11 +1,11 @@
 #include "msp430g2553.h"
 
 //------------khai bao I/O------------------------
-#define D7SEG   P2OUT
-#define C6      BIT4
-#define C8      BIT5
-#define C9      BIT6
-#define C12     BIT7
+#define D7SEG   P1OUT
+#define C6      BIT0
+#define C8      BIT1
+#define C9      BIT2
+#define C12     BIT3
 
 //-------------chuong trinh con-------------------
 void delayms(int ms);
@@ -15,7 +15,7 @@ void countbuff();
 //-------------khai bao bien--------------------
 int  idx = 0;
 //                          0    1    2    3    4    5    6    7    8    9
-unsigned char tbl7segA[]={0xC0,0x79,0x24,0x30,0x19,0x12,0x02,0xF8,0x00,0x10}; // bang ma LED 7SEG ANODE chung
+unsigned char tbl7segA[]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90}; // bang ma LED 7SEG ANODE chung
 char buff[4]={1,2,3,4};
 int interval = 0;
 int counter = 0;
@@ -26,8 +26,8 @@ void main()
   //----Stop watchdog timer to prevent time out reset
    WDTCTL = WDTPW + WDTHOLD;
   //-------------cau hinh IO-------------------------------
-  P2DIR = 0xff;         // 1111 1111
-  P1DIR |= BIT4 + BIT5 + BIT6 + BIT7;
+  P1DIR = 0xff;         // 1111 1111
+  P2DIR |= BIT0 + BIT1 + BIT2 + BIT3;
 
   //--------Khoi dong timer------------------------------
   TA0CTL = TASSEL_2 + ID_3 + MC_1;
@@ -65,16 +65,16 @@ void scanled(){
   // Dieu khien LED idx sang
   switch(idx){          
     case 0: 
-        P1OUT = 0x80;                   
+        P2OUT = 0x01;                   
       break;	        // LED 1
     case 1: 
-        P1OUT = 0x40;    
+        P2OUT = 0x02;    
       break; 	        // LED 2
     case 2: 
-        P1OUT = 0X20;     
+        P2OUT = 0X04;     
       break; 	        // LED 3
     case 3: 
-        P1OUT = 0x10; 
+        P2OUT = 0x08; 
       break;            // LED 4
   }
   idx++;
@@ -83,8 +83,8 @@ void scanled(){
 
 // Tach so
 void countbuff(int counter){
-  buff[3] = counter/1000;
-  buff[2] = (counter%1000)/100;
-  buff[1] = ((counter%1000)%100)/10;
-  buff[0] = counter%10;
+  buff[0] = counter/1000;
+  buff[1] = (counter%1000)/100;
+  buff[2] = ((counter%1000)%100)/10;
+  buff[3] = counter%10;
 }

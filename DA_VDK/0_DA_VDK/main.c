@@ -6,6 +6,7 @@
 #define Echo BIT2
 
 #define D7SEG   P2OUT
+#define Motor   BIT1
 #define C1      BIT4
 #define C2      BIT5
 #define C3      BIT6
@@ -16,6 +17,7 @@ int  idx = 0;
 unsigned char tbl7segA[]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90}; // bang ma LED 7SEG ANODE chung
 char buff[4]={1,2,3,4};
 int miliseconds, hcsr04;
+int Height;
 
 // Khai bao ham
 void delayms(int ms);
@@ -37,9 +39,13 @@ void main() {
    
   // Vong lap chuong trinh chinh
   while(1) {
+    P1OUT |= Motor;
+    delayms(5000);
+    P1OUT &= ~Motor;
     int distance = readDistance();
     delayms(50);
-    countbuff(distance);
+    Height = 8 - distance;
+    countbuff(Height);
     scanled();
     delayms(50);
   }
@@ -56,9 +62,7 @@ void initTimer() {
   TACTL = TASSEL_2 + ID_0 + MC_1;                       // TASSEL 2: Chon xung clock SMCLK 1MHz
   // Cho phep CCR0 ngat
   CCTL0 = CCIE;
-  //CCTL1 = CCIE;
-  CCR0 = 2000;                // chu ky ngat = f_ck / f_CCR0
-  //CCR1 = 625;
+  CCR0 = 1000;                // chu ky ngat = f_ck / f_CCR0
 }
 // Cau hinh chan
 void initIO() {
@@ -68,6 +72,7 @@ void initIO() {
    P1DIR |=  C2;
    P1DIR |=  C3;
    P1DIR |=  C4;
+   P1DIR |= Motor;
    P2DIR |=  0xff;
    
 }
