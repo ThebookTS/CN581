@@ -5,19 +5,21 @@
 #define Trig BIT0
 #define Echo BIT2
 
+// LED
 #define D7SEG   P2OUT
-#define Motor   BIT1
 #define C1      BIT4
 #define C2      BIT5
 #define C3      BIT6
 #define C4      BIT7
 
+#define Motor   BIT1
+#define sensor  BIT3
+
 // Khai bao bien toan cuc
 int  idx = 0;
 unsigned char tbl7segA[]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90}; // bang ma LED 7SEG ANODE chung
 char buff[4]={1,2,3,4};
-int miliseconds, hcsr04;
-int Height;
+int miliseconds, hcsr04, Height, Type;
 
 // Khai bao ham
 void delayms(int ms);
@@ -40,14 +42,19 @@ void main() {
   // Vong lap chuong trinh chinh
   while(1) {
     P1OUT |= Motor;
-    delayms(5000);
-    P1OUT &= ~Motor;
-    int distance = readDistance();
-    delayms(50);
-    Height = 8 - distance;
-    countbuff(Height);
-    scanled();
-    delayms(50);
+    if (( P1IFG & sensor) == 0) {
+        delayms(1250);
+        P1OUT &= ~Motor;
+        int distance = readDistance();
+        delayms(50);
+        Height = 8 - distance;
+        delayms(2000);
+        if ((Height >= 1) && (Height <= 2)) Type = 1;
+        else if ((Height >= 3) && (Height <= 4)) Type = 2;
+        else Type = 3;  
+        int Temp = Type*1000 + Height;                                                             
+        countbuff(Temp);
+    }
   }
 }
 // Ham delay ms
@@ -62,7 +69,7 @@ void initTimer() {
   TACTL = TASSEL_2 + ID_0 + MC_1;                       // TASSEL 2: Chon xung clock SMCLK 1MHz
   // Cho phep CCR0 ngat
   CCTL0 = CCIE;
-  CCR0 = 1000;                // chu ky ngat = f_ck / f_CCR0
+  CCR0 = 5000;                // chu ky ngat = f_ck / f_CCR0
 }
 // Cau hinh chan
 void initIO() {
@@ -73,8 +80,11 @@ void initIO() {
    P1DIR |=  C3;
    P1DIR |=  C4;
    P1DIR |= Motor;
+   P1DIR &= ~sensor;
    P2DIR |=  0xff;
    
+   P1REN |= sensor;
+   P1OUT |= sensor;
 }
 // Ham doc khoang cach
 int readDistance() {
@@ -113,13 +123,6 @@ __interrupt void Timer_A(void) {
   scanled();
 }
 
-// Vector ngat
-//#pragma vector=TIMER0_A1_VECTOR
-//__interrupt void Timer0_A1 (void) {
-  // quet led 5ms
-//  scanled();
-//}
-
 void scanled(){
   D7SEG = tbl7segA[buff[idx]];
   // Dieu khien LED idx sang
@@ -132,7 +135,7 @@ void scanled(){
         break;
     case 1:             // LED 2
         P1OUT &= ~C1;         
-        P1OUT |=  C2;
+        P1OUT &= ~C2;
         P1OUT &= ~C3;
         P1OUT &= ~C4;
         break;
