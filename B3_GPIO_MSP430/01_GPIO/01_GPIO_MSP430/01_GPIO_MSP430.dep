@@ -1,39 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>2</fileVersion>
-    <fileChecksum>627862052</fileChecksum>
+    <fileChecksum>2962720534</fileChecksum>
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\io430g2553.h</file>
+            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+            <file>$PROJ_DIR$\Debug\List\01_GPIO_MSP430.map</file>
+            <file>$TOOLKIT_DIR$\config\linker\lnk430g2553.xcl</file>
             <file>$PROJ_DIR$\main.c</file>
             <file>$PROJ_DIR$\Debug\Exe\01_GPIO_MSP430.ulp</file>
-            <file>$PROJ_DIR$\Debug\Exe\01_GPIO_MSP430.d43</file>
-            <file>$TOOLKIT_DIR$\inc\io430g2553.h</file>
             <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
-            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
             <file>$PROJ_DIR$\Debug\Exe\01_GPIO_MSP430.hex</file>
+            <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+            <file>$PROJ_DIR$\..\..\02_GPIO\02_GPIO_MSP430\main.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\01_GPIO_MSP430.pbd</file>
         </outputs>
         <file>
             <name>$PROJ_DIR$\main.c</name>
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 5</file>
+                    <file> 7</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
+                    <file> 10</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
                     <file> 0</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 4 6</file>
+                    <file> 1 2</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 6 4</file>
+                    <file> 2 1</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\01_GPIO_MSP430.hex</name>
+            <outputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 3</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 4 7 9</file>
                 </tool>
             </inputs>
         </file>
@@ -42,21 +66,14 @@
             <outputs>
                 <tool>
                     <name>XLINK</name>
-                    <file> 3 7</file>
+                    <file> 8 3</file>
                 </tool>
                 <tool>
                     <name>ULP430</name>
-                    <file> 2</file>
+                    <file> 6</file>
                 </tool>
             </outputs>
         </file>
-        <forcedrebuild>
-            <name>[MULTI_TOOL]</name>
-            <tool>XLINK</tool>
-        </forcedrebuild>
-        <forcedrebuild>
-            <name>[REBUILD_ALL]</name>
-        </forcedrebuild>
     </configuration>
     <configuration>
         <name>Release</name>

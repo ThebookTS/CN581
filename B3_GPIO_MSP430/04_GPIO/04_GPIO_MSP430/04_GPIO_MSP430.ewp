@@ -762,7 +762,7 @@
                 <option>
                     <name>OutputFormat</name>
                     <version>11</version>
-                    <state>33</state>
+                    <state>22</state>
                 </option>
                 <option>
                     <name>FormatVariant</name>
@@ -915,7 +915,7 @@
                 </option>
                 <option>
                     <name>DebugInformation</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>RuntimeControl</name>

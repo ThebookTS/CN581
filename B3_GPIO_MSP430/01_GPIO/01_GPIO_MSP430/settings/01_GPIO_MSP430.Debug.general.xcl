@@ -1,10 +1,10 @@
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\430\bin\430proc.dll" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\430\bin\430proc.dll" 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\430\bin\430sim.dll" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\430\bin\430sim.dll" 
 
-"D:\GITHUB\CN581\B3_GPIO_MSP430\01_GPIO\01_GPIO_MSP430\Debug\Exe\01_GPIO_MSP430.hex" 
+"C:\Users\tstra\OneDrive - ctu.edu.vn\1_Github\CN581\B3_GPIO_MSP430\01_GPIO\01_GPIO_MSP430\Debug\Exe\01_GPIO_MSP430.hex" 
 
---plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0_2\430\bin\430bat.dll" 
+--plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\430\bin\430bat.dll" 
 
 
 

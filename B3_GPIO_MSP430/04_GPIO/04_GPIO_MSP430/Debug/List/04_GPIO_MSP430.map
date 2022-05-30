@@ -2,30 +2,27 @@
 #                                                                              #
 #      IAR Universal Linker V6.5.1.95                                          #
 #                                                                              #
-#           Link time     =  16/May/2022  15:40:12                             #
+#           Link time     =  30/May/2022  13:38:01                             #
 #           Target CPU    =  MSP430                                            #
-#           List file     =  C:\Users\BOOKTS_PC\Documents\0_GITHUB\CN581\B3_GP #
-#                            IO_MSP430\04_GPIO\04_GPIO_MSP430\Debug\List\04_GP #
-#                            IO_MSP430.map                                     #
-#           Output file 1 =  C:\Users\BOOKTS_PC\Documents\0_GITHUB\CN581\B3_GP #
-#                            IO_MSP430\04_GPIO\04_GPIO_MSP430\Debug\Exe\04_GPI #
-#                            O_MSP430.hex                                      #
-#                            Format: ubrof10                                   #
-#                            UBROF version 10.0.6                              #
-#                            Using library modules for C-SPY (-rt)             #
-#           Command line  =  -f                                                #
-#                            C:\Users\BOOKTS~1\AppData\Local\Temp\EW76B9.tmp   #
-#                            (C:\Users\BOOKTS_PC\Documents\0_GITHUB\CN581\B3_G #
-#                            PIO_MSP430\04_GPIO\04_GPIO_MSP430\Debug\Obj\main. #
-#                            r43                                               #
+#           List file     =  "C:\Users\tstra\OneDrive - ctu.edu.vn\1_Github\CN #
+#                            581\B3_GPIO_MSP430\04_GPIO\04_GPIO_MSP430\Debug\L #
+#                            ist\04_GPIO_MSP430.map"                           #
+#           Output file 1 =  "C:\Users\tstra\OneDrive - ctu.edu.vn\1_Github\CN #
+#                            581\B3_GPIO_MSP430\04_GPIO\04_GPIO_MSP430\Debug\E #
+#                            xe\04_GPIO_MSP430.hex"                            #
+#                            Format: intel-standard                            #
+#           Command line  =  -f C:\Users\tstra\AppData\Local\Temp\EW9D9F.tmp   #
+#                            ("C:\Users\tstra\OneDrive - ctu.edu.vn\1_Github\C #
+#                            N581\B3_GPIO_MSP430\04_GPIO\04_GPIO_MSP430\Debug\ #
+#                            Obj\main.r43"                                     #
 #                            -o                                                #
-#                            C:\Users\BOOKTS_PC\Documents\0_GITHUB\CN581\B3_GP #
-#                            IO_MSP430\04_GPIO\04_GPIO_MSP430\Debug\Exe\04_GPI #
-#                            O_MSP430.hex                                      #
-#                            -l                                                #
-#                            C:\Users\BOOKTS_PC\Documents\0_GITHUB\CN581\B3_GP #
-#                            IO_MSP430\04_GPIO\04_GPIO_MSP430\Debug\List\04_GP #
-#                            IO_MSP430.map                                     #
+#                            "C:\Users\tstra\OneDrive - ctu.edu.vn\1_Github\CN #
+#                            581\B3_GPIO_MSP430\04_GPIO\04_GPIO_MSP430\Debug\E #
+#                            xe\04_GPIO_MSP430.hex"                            #
+#                            -Fintel-standard -l                               #
+#                            "C:\Users\tstra\OneDrive - ctu.edu.vn\1_Github\CN #
+#                            581\B3_GPIO_MSP430\04_GPIO\04_GPIO_MSP430\Debug\L #
+#                            ist\04_GPIO_MSP430.map"                           #
 #                            -xms                                              #
 #                            "-IC:\Program Files (x86)\IAR Systems\Embedded Wo #
 #                            rkbench 8.0\430\LIB\"                             #
@@ -48,7 +45,7 @@
 #                            -P(CODE)CODE=C000-FFDD                            #
 #                            -Z(CONST)SIGNATURE=FFDE-FFDF                      #
 #                            -Z(CODE)INTVEC=FFE0-FFFF                          #
-#                            -Z(CODE)RESET=FFFE-FFFF) -D_STACK_SIZE=50 -rt     #
+#                            -Z(CODE)RESET=FFFE-FFFF) -D_STACK_SIZE=50         #
 #                            "C:\Program Files (x86)\IAR Systems\Embedded Work #
 #                            bench 8.0\430\lib\dlib\dl430fn.r43"               #
 #                            -e_PrintfLarge=_Printf -e_ScanfLarge=_Scanf       #
@@ -121,7 +118,7 @@ Absolute parts
            _STACK_SIZE             0050 
     *************************************************************************
 
-  FILE NAME : C:\Users\BOOKTS_PC\Documents\0_GITHUB\CN581\B3_GPIO_MSP430\04_GPIO\04_GPIO_MSP430\Debug\Obj\main.r43
+  FILE NAME : C:\Users\tstra\OneDrive - ctu.edu.vn\1_Github\CN581\B3_GPIO_MSP430\04_GPIO\04_GPIO_MSP430\Debug\Obj\main.r43
   PROGRAM MODULE, NAME : main
 
   SEGMENTS IN THE MODULE
@@ -193,7 +190,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
   Relative segment, address: C00C - C041 (0x36 bytes), align: 1
-  Segment part 15.
+  Segment part 13.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            main                    C00C            Segment part 19 (?cstart)
@@ -201,7 +198,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
   Relative segment, address: C09C - C0C5 (0x2a bytes), align: 1
-  Segment part 18.            Intra module refs:   Port_2::??INTVEC 6
+  Segment part 16.            Intra module refs:   Port_2::??INTVEC 6
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            Port_2                  C09C 
@@ -210,7 +207,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
   Relative segment, address: C0C6 - C0DB (0x16 bytes), align: 1
-  Segment part 14.            Intra module refs:   brightShiftLeft
+  Segment part 12.            Intra module refs:   brightShiftLeft
                                                    main
                                                    shiftLeft
            ENTRY                   ADDRESS         REF BY
@@ -219,7 +216,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
   Relative segment, address: C072 - C09B (0x2a bytes), align: 1
-  Segment part 17.            Intra module refs:   Port_2
+  Segment part 15.            Intra module refs:   Port_2
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            shiftLeft               C072 
@@ -227,7 +224,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
   Relative segment, address: C042 - C071 (0x30 bytes), align: 1
-  Segment part 16.            Intra module refs:   Port_2
+  Segment part 14.            Intra module refs:   Port_2
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            brightShiftLeft         C042 
@@ -243,45 +240,19 @@ INTVEC
     *************************************************************************
 
   FILE NAME : C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\430\lib\dlib\dl430fn.r43
-  LIBRARY MODULE, NAME : ?__dbg_break
-
-  SEGMENTS IN THE MODULE
-  ======================
-<CODE> 1 (was CODE)
-  Relative segment, address: C0F6 - C0F7 (0x2 bytes), align: 1
-  Segment part 2.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           __DebugBreak            C0F6            __exit (?__exit)
-
-    -------------------------------------------------------------------------
-  LIBRARY MODULE, NAME : ?__exit
-
-  SEGMENTS IN THE MODULE
-  ======================
-<CODE> 1 (was CODE)
-  Relative segment, address: C0DC - C0ED (0x12 bytes), align: 1
-  Segment part 2.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           __exit                  C0DC            Segment part 6 (?_exit)
-                                                   _exit (?_exit)
-               calls direct
-
-    -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?_exit
 
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: C0EE, align: 1
+  Relative segment, address: C0E0, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _exit                   C0EE            exit (?exit)
+           _exit                   C0E0            exit (?exit)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: C0EE - C0F1 (0x4 bytes), align: 1
+  Relative segment, address: C0E0 - C0E3 (0x4 bytes), align: 1
   Segment part 6.             Intra module refs:   _exit
 
     -------------------------------------------------------------------------
@@ -328,12 +299,25 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: C0F2 - C0F5 (0x4 bytes), align: 1
+  Relative segment, address: C0DC - C0DF (0x4 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           exit                    C0F2            Segment part 19 (?cstart)
+           exit                    C0DC            Segment part 19 (?cstart)
                calls direct
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?__exit
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: C0E4 - C0E5 (0x2 bytes), align: 1
+  Segment part 2.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __exit                  C0E4            Segment part 6 (?_exit)
+                                                   _exit (?_exit)
 
 
 
@@ -353,7 +337,7 @@ DATA16_AN                              0021 - 0022               2   rel    0
                                        0120 - 0121               2 
 CSTACK                                 03B0 - 03FF              50   rel    1
 CSTART                                 C000 - C00B               C   rel    1
-<CODE> 1                               C00C - C0F7              EC   rel    1
+<CODE> 1                               C00C - C0E5              DA   rel    1
 INTVEC                                 FFE0 - FFE7               8   com    1
 RESET                                  FFFE - FFFF               2   rel    1
 
@@ -363,7 +347,7 @@ RESET                                  FFFE - FFFF               2   rel    1
                 *                                      *
                 ****************************************
 
- 258 bytes of CODE memory
+ 240 bytes of CODE memory
   80 bytes of DATA memory (+ 10 absolute )
 
 Errors: none
