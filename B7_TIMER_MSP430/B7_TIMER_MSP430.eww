@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\01_Timer_MSP430F5529\01_Timer_MSP430F5529\01_Timer_MSP430F5529.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\02_PWM_G2253\02_PWM_G2253\02_PWM_G2253.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>
