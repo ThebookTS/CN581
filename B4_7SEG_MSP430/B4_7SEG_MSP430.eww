@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\01_LED_7_SEG\01_LED_7_SEG\01_LED_7_SEG.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\02_4_LED_7_SEG\02_4_LED_7_SEG\02_4_LED_7_SEG.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\03_4_LED_7_SEG\03_4_LED_7_SEG\03_4_LED_7_SEG.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\04_4_LED_7_SEG\04_4_LED_7_SEG\04_4_LED_7_SEG.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\05_4_LED_7_SEG\05_4_LED_7_SEG\05_4_LED_7_SEG.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>
